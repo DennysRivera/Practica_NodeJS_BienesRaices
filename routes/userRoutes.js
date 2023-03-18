@@ -1,13 +1,9 @@
 import express from "express";
+import { formLogin, formSignup } from "../controllers/userController.js"
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.send("Hola mundo!")
-})
-
-router.get("/json", (req, res) => {
-    res.json({msg: "Esto es un JSON"})
-})
+router.get("/login", formLogin);
+router.get("/signup", formSignup)
 
 export default router;
